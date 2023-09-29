@@ -16,11 +16,9 @@
 }
 
 .active {
-  background-color: rgb(255, 71, 30);
   color: #fff !important;
   font-weight: 700;
   background-color: dodgerblue;
-  color: white !important;
 }
 
 .carousel-content {
