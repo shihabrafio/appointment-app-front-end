@@ -8,7 +8,7 @@ import PatientList from './components/forSuperUser/PatientList';
 import Appointment from './components/appointmentInfo/Appointment';
 import AppointmentList from './components/forSuperUser/AppointmentList';
 import UserList from './components/forSuperUser/UserList';
-
+import DoctorDetails from './components/doctorInfo/DoctorDetails.jsx';
 
 function App() {
   return (
@@ -17,6 +17,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/doctors" element={<DoctorList />} />
         <Route path="/delete_doctor" element={<DeleteDoctor />} />
+        <Route path="/doctors/:id" element={<DoctorDetails />} />
         <Route path="/appointment" element={<Appointment />} />
         <Route path="/my_appointments" element={<MyAppointments />} />
         <Route path="/user_list" element={<UserList />} />

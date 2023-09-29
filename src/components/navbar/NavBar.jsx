@@ -6,7 +6,7 @@ import {
   FaFacebookF, FaGooglePlusG, FaGoogleDrive, FaTwitter, FaLinkedinIn, FaRibbon, FaLandmark,
 } from 'react-icons/fa6';
 import { signOut } from '../../features/authSlice';
-import AddDoctor from '../doctorInfo/AddDoctor';
+import { AddDoctor}  from '../doctorInfo/AddDoctor';
 
 function NavBar() {
   const [showSignUpModal, setShowSignUpModal] = useState(false);
