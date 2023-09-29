@@ -109,7 +109,7 @@ export const signIn = (name, email, password) => async (dispatch) => {
     sessionStorage.setItem('userRole', userRole);
     dispatch(signInSuccess({
       authToken, userRole, userName, userID,
-    }));;
+    }));
   } catch (error) {
     const { message } = error.response.data;
     dispatch(signInError(message));
