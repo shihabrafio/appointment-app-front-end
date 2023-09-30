@@ -23,7 +23,7 @@ function formatDateAndTime(dateTimeString) {
 }
 
 const DoctorDetails = () => {
-  const API_BASE_URL = 'https://booking-doctor-api-v1.onrender.com/users';
+  const API_BASE_URL = 'http://localhost:3000/api/v1/users';
   const { id } = useParams();
  const [doctor, setDoctor] = useState(null);
   const [appointments, setAppointment] = useState([]);
