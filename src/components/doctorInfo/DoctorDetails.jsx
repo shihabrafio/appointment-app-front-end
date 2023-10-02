@@ -5,7 +5,7 @@ import { FaCaretLeft } from 'react-icons/fa6';
 import { CircularProgressbarWithChildren } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import NavBar from '../navbar/NavBar';
-// import './doctor.css';
+import './doctor.css';
 
 function formatDateAndTime(dateTimeString) {
   const date = new Date(dateTimeString);
