@@ -112,6 +112,11 @@ export const AddDoctor = ({ showSignUpModal, handleCloseSignUpModal, handleOpenS
           </Row>
 
           <Row className="mb-3">
+              <Form.Group as={Col} controlId="experiences">
+              <Form.Label>Experiences</Form.Label>
+              <Form.Control type="number" name="experiences" value={formData.experiences} onChange={handleChange} required placeholder="Enter Doctor's experiences" />
+            </Form.Group>
+
             <Form.Group as={Col} controlId="available_from">
               <Form.Label>Available From</Form.Label>
               <Form.Control type="datetime-local" name="available_from" value={formData.available_from} onChange={handleChange} required placeholder="Select available from date and time" />
@@ -123,16 +128,6 @@ export const AddDoctor = ({ showSignUpModal, handleCloseSignUpModal, handleOpenS
           </Row>
 
           <Row className="mb-3">
-            <Form.Group as={Col} controlId="experiences">
-              <Form.Label>Experiences</Form.Label>
-              <Form.Control type="number" name="experiences" value={formData.experiences} onChange={handleChange} required placeholder="Enter Doctor's experiences" />
-            </Form.Group>
-            <Form.Group as={Col} controlId="specialization">
-              <Form.Label>Specialization</Form.Label>
-              <Form.Control type="text" name="specialization" value={formData.specialization} onChange={handleChange} required placeholder="Enter Doctor's specialization" />
-            </Form.Group>
-         </Row>
-          <Row className="mb-3">
             <Form.Group as={Col} controlId="consultation_fee">
               <Form.Label>Consultation Fee</Form.Label>
               <Form.Control type="number" name="consultation_fee" value={formData.consultation_fee} onChange={handleChange} required placeholder="Enter Doctor's consultation fee" />
@@ -141,6 +136,11 @@ export const AddDoctor = ({ showSignUpModal, handleCloseSignUpModal, handleOpenS
             <Form.Group as={Col} controlId="rating">
               <Form.Label>Rating</Form.Label>
               <Form.Control type="number" name="rating" value={formData.rating} onChange={handleChange} required placeholder="Enter Doctor's rating" />
+            </Form.Group>
+
+             <Form.Group as={Col} controlId="specialization">
+              <Form.Label>Specialization</Form.Label>
+              <Form.Control type="text" name="specialization" value={formData.specialization} onChange={handleChange} required placeholder="Enter Doctor's specialization" />
             </Form.Group>
           </Row>
 
@@ -166,7 +166,7 @@ export const AddDoctor = ({ showSignUpModal, handleCloseSignUpModal, handleOpenS
               <Form.Control type="text" name="address.zip_code" value={formData.zip_code} onChange={handleChange} required placeholder="Enter Doctor's ZIP code" />
             </Form.Group>
          </Row>
-          <Button variant="primary" type="submit">
+          <Button variant="primary" type="submit" onClick={handleCloseSignUpModal}>
             Add Doctor
           </Button>
         </Form>

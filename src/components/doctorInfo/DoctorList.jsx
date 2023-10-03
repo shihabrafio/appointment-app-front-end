@@ -63,7 +63,7 @@ function DoctorList() {
 
   return (<div className="container-fluid">
       <div className="row">
-        <div className="col-lg-2 col-md-2 col-12 d-flex flex-column justify-content-between custom_nav">
+        <div className="col-lg-2 col-md-2 col-12 p-0">
           <NavBar />
         </div>
 
