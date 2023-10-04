@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
@@ -13,7 +14,7 @@ const initialState = {
 // Thunk to handle signUp
 export const signUp = createAsyncThunk('auth/signUp', async (userData) => {
   try {
-    const response = await axios.post('http://localhost:3000/api/v1/users', {
+    const response = await axios.post('https://doctors-api-app.onrender.com/api/v1/users', {
       user: {
         name: userData.name,
         age: userData.age,
@@ -90,7 +91,7 @@ export const { signInSuccess, signInError, signOut } = authSlice.actions;
 
 export const signIn = (name, email, password) => async (dispatch) => {
   try {
-    const response = await axios.post('http://localhost:3000/api/v1/users/sign_in', {
+    const response = await axios.post('https://doctors-api-app.onrender.com/api/v1/users/sign_in', {
       user: {
         name,
         email,
@@ -98,10 +99,22 @@ export const signIn = (name, email, password) => async (dispatch) => {
       },
     });
 
-    const authToken = response.headers.authorization;
+    console.log('Axios Response:', response);
+
+    // const authToken = response.headers.authorization;
+    const authToken = response.data.token;
     const userName = response.data.data.name;
     const userID = response.data.data.id;
     const userRole = response.data.data.role;
+
+    // Add debugging statements
+    console.log('Auth Token:', authToken);
+    console.log('User Name:', userName);
+    console.log('User ID:', userID);
+    console.log('User Role:', userRole);
+
+    // Place the debugger statement here to pause execution
+    // debugger;
 
     sessionStorage.setItem('authToken', authToken);
     sessionStorage.setItem('userName', userName);
@@ -112,6 +125,10 @@ export const signIn = (name, email, password) => async (dispatch) => {
     }));
   } catch (error) {
     const { message } = error.response.data;
+
+    // Add debugging statements
+    console.error('Sign In Error:', message);
+
     dispatch(signInError(message));
   }
 };

@@ -9,7 +9,7 @@ import './doctor.css';
 import { formatDateAndTime } from '../appointmentInfo/MyAppointments';
 
 const DoctorDetails = () => {
-  const API_BASE_URL = 'http://localhost:3000/api/v1/users';
+  const API_BASE_URL = 'https://doctors-api-app.onrender.com/api/v1/users';
   const { id } = useParams();
  const [doctor, setDoctor] = useState(null);
   const [appointments, setAppointment] = useState([]);

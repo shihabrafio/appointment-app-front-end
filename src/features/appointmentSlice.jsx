@@ -13,7 +13,7 @@ export const addAppointment = createAsyncThunk(
   'appointments/addAppointment',
   async (formData) => {
     try {
-      const response = await axios.post('http://localhost:3000/api/v1/appointments', formData, {
+      const response = await axios.post('https://doctors-api-app.onrender.com/api/v1/appointments', formData, {
         headers: {
           Authorization: sessionStorage.getItem('authToken'),
         },
@@ -28,13 +28,13 @@ export const addAppointment = createAsyncThunk(
 export const fetchAppointments = createAsyncThunk('appointments/fetchAppointments', async () => {
   try {
     const [appointmentsResponse, patientsResponse, doctorsResponse] = await Promise.all([
-      axios.get('http://localhost:3000/api/v1/appointments', {
+      axios.get('https://doctors-api-app.onrender.com/api/v1/appointments', {
         headers: {
           Authorization: sessionStorage.getItem('authToken'),
         },
       }),
-      axios.get('http://localhost:3000/api/v1/users?role=patient'),
-      axios.get('http://localhost:3000/api/v1/users?role=doctor'),
+      axios.get('https://doctors-api-app.onrender.com/api/v1/users?role=patient'),
+      axios.get('https://doctors-api-app.onrender.com/api/v1/users?role=doctor'),
     ]);
 
     const appointments = appointmentsResponse.data;
@@ -49,7 +49,7 @@ export const fetchAppointments = createAsyncThunk('appointments/fetchAppointment
 
 export const deleteAppointment = createAsyncThunk('appointments/deleteAppointment', async (appointmentId) => {
   try {
-    await axios.delete(`http://localhost:3000/api/v1/appointments/${appointmentId}`, {
+    await axios.delete(`https://doctors-api-app.onrender.com/api/v1/appointments/${appointmentId}`, {
       headers: {
         Authorization: sessionStorage.getItem('authToken'),
       },
