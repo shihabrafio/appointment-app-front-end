@@ -101,7 +101,6 @@ export const signIn = (name, email, password) => async (dispatch) => {
 
     console.log('Axios Response:', response);
 
-    // const authToken = response.headers.authorization;
     const authToken = response.data.token;
     const userName = response.data.data.name;
     const userID = response.data.data.id;
@@ -112,9 +111,6 @@ export const signIn = (name, email, password) => async (dispatch) => {
     console.log('User Name:', userName);
     console.log('User ID:', userID);
     console.log('User Role:', userRole);
-
-    // Place the debugger statement here to pause execution
-    // debugger;
 
     sessionStorage.setItem('authToken', authToken);
     sessionStorage.setItem('userName', userName);
