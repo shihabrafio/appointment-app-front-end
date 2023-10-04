@@ -14,7 +14,7 @@ const initialState = {
 // Thunk to handle signUp
 export const signUp = createAsyncThunk('auth/signUp', async (userData) => {
   try {
-    const response = await axios.post('http://localhost:3000/api/v1/users', {
+    const response = await axios.post('https://doctors-api-app.onrender.com/api/v1/users', {
       user: {
         name: userData.name,
         age: userData.age,
@@ -91,7 +91,7 @@ export const { signInSuccess, signInError, signOut } = authSlice.actions;
 
 export const signIn = (name, email, password) => async (dispatch) => {
   try {
-    const response = await axios.post('http://localhost:3000/api/v1/users/sign_in', {
+    const response = await axios.post('https://doctors-api-app.onrender.com/api/v1/users/sign_in', {
       user: {
         name,
         email,
