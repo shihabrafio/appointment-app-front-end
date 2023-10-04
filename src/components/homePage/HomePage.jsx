@@ -17,6 +17,8 @@ function HomePage() {
     const email = e.target.email.value.trim();
     const password = e.target.password.value.trim();
 
+    console.log('Dispatching signIn action');
+
     const response = await dispatch(signIn(name, email, password));
 
     // Handle error messages from the server
@@ -42,6 +44,8 @@ function HomePage() {
   };
 
   useEffect(() => {
+    console.log('Error:', error);
+    console.log('isAuthenticated:', isAuthenticated);
     setErrorMessage(error);
     if (isAuthenticated) {
       window.location.href = '/doctors';

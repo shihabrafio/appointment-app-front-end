@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
@@ -98,10 +99,22 @@ export const signIn = (name, email, password) => async (dispatch) => {
       },
     });
 
-    const authToken = response.headers.authorization;
+    console.log('Axios Response:', response);
+
+    // const authToken = response.headers.authorization;
+    const authToken = response.data.token;
     const userName = response.data.data.name;
     const userID = response.data.data.id;
     const userRole = response.data.data.role;
+
+    // Add debugging statements
+    console.log('Auth Token:', authToken);
+    console.log('User Name:', userName);
+    console.log('User ID:', userID);
+    console.log('User Role:', userRole);
+
+    // Place the debugger statement here to pause execution
+    // debugger;
 
     sessionStorage.setItem('authToken', authToken);
     sessionStorage.setItem('userName', userName);
@@ -112,6 +125,10 @@ export const signIn = (name, email, password) => async (dispatch) => {
     }));
   } catch (error) {
     const { message } = error.response.data;
+
+    // Add debugging statements
+    console.error('Sign In Error:', message);
+
     dispatch(signInError(message));
   }
 };
