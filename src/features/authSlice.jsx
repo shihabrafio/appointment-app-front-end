@@ -101,8 +101,8 @@ export const signIn = (name, email, password) => async (dispatch) => {
 
     console.log('Axios Response:', response);
 
-    // const authToken = response.headers.authorization;
-    const authToken = response.data.token;
+    const authToken = response.headers.authorization;
+    // const authToken = response.data.token;
     const userName = response.data.data.name;
     const userID = response.data.data.id;
     const userRole = response.data.data.role;
@@ -125,9 +125,6 @@ export const signIn = (name, email, password) => async (dispatch) => {
     }));
   } catch (error) {
     const { message } = error.response.data;
-
-    // Add debugging statements
-    console.error('Sign In Error:', message);
 
     dispatch(signInError(message));
   }
