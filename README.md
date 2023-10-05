@@ -114,12 +114,6 @@ npm run start
 
 - Run the app with `npm run start` in the terminal from the root folder of the project.
 
-### Test
-
-```sh
-npm run test
-```
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- AUTHORS -->
