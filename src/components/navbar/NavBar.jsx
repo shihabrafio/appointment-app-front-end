@@ -10,6 +10,7 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import { signOut } from '../../features/authSlice';
 import { AddDoctor}  from '../doctorInfo/AddDoctor';
+import React from 'react';
 
 function NavBar() {
   const [showSignUpModal, setShowSignUpModal] = useState(false);

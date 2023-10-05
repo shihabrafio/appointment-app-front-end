@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  style={
+    {
+      "height": 200,
+      "width": 200,
+    }
+  }
+>
+  loading...
+</div>
+`;

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Container, Row, Col, Form, Button,
 } from 'react-bootstrap';
@@ -65,7 +65,7 @@ const Appointment = () => {
   return (
  <>
       <Container fluid>
-        <Row className=" appointmentBg">
+        <Row className="appointmentBg">
           <Col md={2} className="px-0">
             <NavBar />
           </Col>

@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-
+import 'jest-localstorage-mock';
 const initialState = {
   isAuthenticated: false,
   authToken: sessionStorage.getItem('authToken') || null,

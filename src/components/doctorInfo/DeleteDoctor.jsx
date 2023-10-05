@@ -5,7 +5,7 @@ import {
 } from 'react-bootstrap';
 import NavBar from '../navbar/NavBar';
 import { fetchDoctors, deleteDoctor } from '../../features/doctorSlice';
-
+import React from 'react';
 
 function DeleteDoctor() {
   const dispatch = useDispatch();

@@ -6,6 +6,7 @@ import {
   Form, Button, Row, Col, Modal,
 } from 'react-bootstrap';
 import { addDoctor } from '../../features/doctorSlice';
+import React from 'react'
 
 const initialAddressData = {
   street: '',

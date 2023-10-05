@@ -7,6 +7,7 @@ import { useParams } from 'react-router-dom';
 import NavBar from '../navbar/NavBar';
 import { addAppointment } from '../../features/appointmentSlice';
 import './appointment.css';
+import React from 'react'
 
 const ModalAppoint = () => {
   const dispatch = useDispatch();
