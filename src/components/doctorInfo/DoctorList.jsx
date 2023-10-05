@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { FaCaretLeft, FaCaretRight } from 'react-icons/fa6';
 import { fetchDoctors } from '../../features/doctorSlice';
 import NavBar from '../navbar/NavBar';
+import React from 'react';
 
 function DoctorList() {
   const dispatch = useDispatch();
