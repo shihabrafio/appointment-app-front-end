@@ -43,3 +43,9 @@
 .img-fluid {
   width: 50%;
 }
+
+.doctor-photo {
+  max-width: 158px; /* Set the maximum width for the photo */
+  max-height: 128px; /* Set the maximum height for the photo */
+  border-radius: 50%; /* Make the photo circular with rounded corners */
+}

@@ -52,7 +52,6 @@ const SignUpForm = ({ showSignUpModal, handleCloseSignUpModal, handleOpenSignUpM
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(signUp(formData));
-    window.location.href = '/';
   };
 
   return (
