@@ -14,6 +14,8 @@ const initialState = {
 // Thunk to handle signUp
 export const signUp = createAsyncThunk('auth/signUp', async (userData) => {
   try {
+    // if you want to test the application locally you need to change url to http://localhost:3000/api/v1/users
+    //test the app with apis locally change url to https://doctors-api-app.onrender.com/api/v1/users
     const response = await axios.post('https://doctors-api-app.onrender.com/api/v1/users', {
       user: {
         name: userData.name,
@@ -91,6 +93,8 @@ export const { signInSuccess, signInError, signOut } = authSlice.actions;
 
 export const signIn = (name, email, password) => async (dispatch) => {
   try {
+    // if you want to test the application locally you need to change url to http://localhost:3000/api/v1/users/sign_in
+    // test the app with apis locally change url to https://doctors-api-app.onrender.com/api/v1/users/sign_in
     const response = await axios.post('https://doctors-api-app.onrender.com/api/v1/users/sign_in', {
       user: {
         name,
@@ -101,7 +105,7 @@ export const signIn = (name, email, password) => async (dispatch) => {
 
     console.log('Axios Response:', response);
 
-    const authToken = response.data.token;
+    const authToken = response.headers.authorization;
     const userName = response.data.data.name;
     const userID = response.data.data.id;
     const userRole = response.data.data.role;
@@ -121,9 +125,6 @@ export const signIn = (name, email, password) => async (dispatch) => {
     }));
   } catch (error) {
     const { message } = error.response.data;
-
-    // Add debugging statements
-    console.error('Sign In Error:', message);
 
     dispatch(signInError(message));
   }

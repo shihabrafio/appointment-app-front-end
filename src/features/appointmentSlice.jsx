@@ -13,6 +13,8 @@ export const addAppointment = createAsyncThunk(
   'appointments/addAppointment',
   async (formData) => {
     try {
+      // if you want to test the application locally just change url to http://localhost:3000/api/v1/appointments
+      // test the app with apis locally change url to https://doctors-api-app.onrender.com/api/v1/appointments
       const response = await axios.post('https://doctors-api-app.onrender.com/api/v1/appointments', formData, {
         headers: {
           Authorization: sessionStorage.getItem('authToken'),
@@ -27,12 +29,16 @@ export const addAppointment = createAsyncThunk(
 
 export const fetchAppointments = createAsyncThunk('appointments/fetchAppointments', async () => {
   try {
+    // if you want to test the application locally just change url to http://localhost:3000/api/v1/appointments
+    // test the app with apis locally change url to https://doctors-api-app.onrender.com/api/v1/appointments
     const [appointmentsResponse, patientsResponse, doctorsResponse] = await Promise.all([
       axios.get('https://doctors-api-app.onrender.com/api/v1/appointments', {
         headers: {
           Authorization: sessionStorage.getItem('authToken'),
         },
       }),
+      // if you want to test the application locally just change url to http://localhost:3000/api/v1/users?role=patientordoctor
+      // test the app with apis locally change url to https://doctors-api-app.onrender.com/api/v1/users?role=patientordoctor
       axios.get('https://doctors-api-app.onrender.com/api/v1/users?role=patient'),
       axios.get('https://doctors-api-app.onrender.com/api/v1/users?role=doctor'),
     ]);
@@ -49,6 +55,8 @@ export const fetchAppointments = createAsyncThunk('appointments/fetchAppointment
 
 export const deleteAppointment = createAsyncThunk('appointments/deleteAppointment', async (appointmentId) => {
   try {
+    // if you want to test the application locally just change url to http://localhost:3000/api/v1/appointments/${appointmentId}
+    // test the app with apis locally change url to https://doctors-api-app.onrender.com/api/v1/appointments/${appointmentId}
     await axios.delete(`https://doctors-api-app.onrender.com/api/v1/appointments/${appointmentId}`, {
       headers: {
         Authorization: sessionStorage.getItem('authToken'),
