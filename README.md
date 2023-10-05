@@ -60,9 +60,7 @@ Doctor Appointment App is a web-based application designed to streamline and sim
 - **Authenticate User Login using Devise-jwt**
 - **Add Doctor**
 - **Delete Doctor**
-- **List of all Users**
 - **List of all Doctors**
-- **List of all Patients**
 - **Make Appointment with Doctor**
 - **My Appointment**
 - **Cancel Appointment**
@@ -128,8 +126,6 @@ npm run test
 
 ## 👥 Authors <a name="authors"></a>
 
-
-
 👤 **A.I.M. Shihab Uddin Khan**
 
 - GitHub: [@shihabrafio](https://github.com/shihabrafio)
@@ -164,7 +160,7 @@ npm run test
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-[See Live on render]()
+[See Live on render](https://doctor-app-u5x6.onrender.com/)
 
 ## 🪵 Link to Backend Repo <a name="key-features"></a>
 
