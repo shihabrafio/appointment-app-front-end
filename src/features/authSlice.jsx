@@ -16,7 +16,7 @@ export const signUp = createAsyncThunk('auth/signUp', async (userData) => {
   try {
     // if you want to test the application locally you need to change url to http://localhost:3000/api/v1/users
     //test the app with apis locally change url to https://doctors-api-app.onrender.com/api/v1/users
-    const response = await axios.post('https://doctors-api-app.onrender.com/api/v1/users', {
+    const response = await axios.post('http://localhost:3000/api/v1/users', {
       user: {
         name: userData.name,
         age: userData.age,
@@ -95,7 +95,7 @@ export const signIn = (name, email, password) => async (dispatch) => {
   try {
     // if you want to test the application locally you need to change url to http://localhost:3000/api/v1/users/sign_in
     // test the app with apis locally change url to https://doctors-api-app.onrender.com/api/v1/users/sign_in
-    const response = await axios.post('https://doctors-api-app.onrender.com/api/v1/users/sign_in', {
+    const response = await axios.post('http://localhost:3000/api/v1/users/sign_in', {
       user: {
         name,
         email,
