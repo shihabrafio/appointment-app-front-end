@@ -5,6 +5,7 @@ import HomeDoctors from './HomeDoctors';
 import SignUpForm from '../signUpInOut/SignUpForm';
 import { signIn } from '../../features/authSlice';
 import './homepage.css';
+import React from 'react';
 
 function HomePage() {
   const dispatch = useDispatch();
