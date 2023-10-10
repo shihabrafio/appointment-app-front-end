@@ -158,7 +158,7 @@ npm run start
 
 ## 🪵 Link to Backend Repo <a name="key-features"></a>
 
-- [Backend](https://github.com/baqar-abbas/appointment-app-back-end)
+- [Backend](https://github.com/shihabrafio/appointment-app-back-end)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
